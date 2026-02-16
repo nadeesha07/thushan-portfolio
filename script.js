@@ -1,7 +1,7 @@
 // Utility function to limit the rate at which a function gets called.
 function throttle(func, limit) {
     let inThrottle;
-    return function() {
+    return function () {
         const args = arguments;
         const context = this;
         if (!inThrottle) {
@@ -37,7 +37,7 @@ function initializeCore() {
     initializeAnimations();
     initializeCounters();
     initializeChatbot();
-    
+
     window.addEventListener('load', removeLoader);
 }
 
@@ -45,13 +45,13 @@ function initializeCore() {
 function initializeThemeToggle() {
     const themeToggle = document.querySelector('.theme-toggle');
     if (!themeToggle) return;
-    
+
     const savedTheme = localStorage.getItem('theme');
     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const currentTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
-    
+
     document.documentElement.setAttribute('data-theme', currentTheme);
-    
+
     themeToggle.addEventListener('click', () => {
         const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
         const newTheme = isDark ? 'light' : 'dark';
@@ -194,7 +194,7 @@ function initializeBlog() {
         });
     });
     // The load more button is hidden as all 6 articles are shown by default.
-    if(loadMoreBtn) {
+    if (loadMoreBtn) {
         loadMoreBtn.style.display = 'none';
     }
 }
@@ -221,7 +221,7 @@ function initializeForms() {
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
 
         const formData = new FormData(contactForm);
-        
+
         try {
             const response = await fetch(contactForm.action, {
                 method: 'POST',
@@ -308,7 +308,7 @@ function initializeChatbot() {
     const messagesEl = document.querySelector('.chatbot-messages');
     const form = document.querySelector('.chatbot-input-form');
     if (!container || !toggleBtn || !messagesEl || !form) return;
-    
+
     const input = form.querySelector('input');
     const icon = toggleBtn.querySelector('i');
     let initialMessageSent = false;
@@ -323,7 +323,7 @@ function initializeChatbot() {
         }
         if (isOpen) input.focus();
     });
-    
+
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         const userInput = input.value.trim();
@@ -352,7 +352,8 @@ function initializeChatbot() {
         { keywords: ['experience', 'background', 'student', 'how long', 'work history'], response: "Thushan has over 1 year of experience and is a first-year IT student. More info is at the <a href='index.html#about'>About Me</a> section." },
         { keywords: ['contact', 'email', 'phone', 'touch', 'talk to you', 'reach out'], response: "The best way to get in touch is via the <a href='index.html#contact'>Contact</a> section. The email is thushansocial10@gmail.com." },
         { keywords: ['hello', 'hi', 'hey', 'yo'], response: "Hello! What can I assist you with today?" },
-        { keywords: ['other services', 'more services', 'any topic', 'note', 'a/l note', 'windows', 'vpn', 'activation'], response: "You can find more services like A/L Notes and Windows Activation on the <a href='page01.html'>More Services</a> page." }
+        { keywords: ['other services', 'more services', 'any topic', 'note', 'a/l note', 'windows', 'vpn', 'activation'], response: "You can find more services like A/L Notes and Windows Activation on the <a href='page01.html'>More Services</a> page." },
+        { keywords: ['2sva'], response: "Here are the SVA links:<br>🔗 <a href='https://6991fd3493c37298fe49cb10--remarkable-medovik-76a46a.netlify.app/' target='_blank'>SVA on Netlify</a><br>🔗 <a href='https://sva-jobs.web.app' target='_blank'>SVA Jobs</a>" }
     ];
 
     function getBotResponse(question) {
