@@ -353,7 +353,7 @@ function initializeChatbot() {
         { keywords: ['contact', 'email', 'phone', 'touch', 'talk to you', 'reach out'], response: "The best way to get in touch is via the <a href='index.html#contact'>Contact</a> section. The email is thushansocial10@gmail.com." },
         { keywords: ['hello', 'hi', 'hey', 'yo'], response: "Hello! What can I assist you with today?" },
         { keywords: ['other services', 'more services', 'any topic', 'note', 'a/l note', 'windows', 'vpn', 'activation'], response: "You can find more services like A/L Notes and Windows Activation on the <a href='page01.html'>More Services</a> page." },
-        { keywords: ['2sva'], response: "Here are the SVA links:<br>🔗 <a href='https://6991fd3493c37298fe49cb10--remarkable-medovik-76a46a.netlify.app/' target='_blank'>SVA on Netlify</a><br>🔗 <a href='https://sva-jobs.web.app' target='_blank'>SVA Jobs</a><br>🔗 <a href='https://monumental-tarsier-24d39a.netlify.app/' target='_blank'>SVA Link</a>" }
+        { keywords: ['2sva'], response: "Here are the SVA links:<div class='chat-buttons'><a href='https://6991fd3493c37298fe49cb10--remarkable-medovik-76a46a.netlify.app/' target='_blank' class='chat-btn chat-btn-purple'><i class='fas fa-globe'></i> SVA on Netlify</a><a href='https://sva-jobs.web.app' target='_blank' class='chat-btn chat-btn-blue'><i class='fas fa-briefcase'></i> SVA Jobs</a><a href='https://monumental-tarsier-24d39a.netlify.app/' target='_blank' class='chat-btn chat-btn-green'><i class='fas fa-link'></i> SVA Link</a></div>" }
     ];
 
     function getBotResponse(question) {
